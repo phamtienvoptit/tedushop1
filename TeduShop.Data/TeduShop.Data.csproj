@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastucture\IDbFactory.cs" />
+    <Compile Include="Infrastucture\IRespository.cs" />
+    <Compile Include="Infrastucture\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +62,9 @@
       <Project>{2cb614ff-01a8-46db-b807-ddb28fb3a36e}</Project>
       <Name>TeduShop.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Respositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
