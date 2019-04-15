@@ -48,10 +48,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastucture\DbFactory.cs" />
+    <Compile Include="Infrastucture\Disposable.cs" />
     <Compile Include="Infrastucture\IDbFactory.cs" />
     <Compile Include="Infrastucture\IRespository.cs" />
     <Compile Include="Infrastucture\IUnitOfWork.cs" />
+    <Compile Include="Infrastucture\ReponsitoryBase.cs" />
+    <Compile Include="Infrastucture\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeduShopDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -61,6 +66,10 @@
     <ProjectReference Include="..\TeduShop.Common\TeduShop.Common.csproj">
       <Project>{2cb614ff-01a8-46db-b807-ddb28fb3a36e}</Project>
       <Name>TeduShop.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeduShop.Model\TeduShop.Model.csproj">
+      <Project>{7b249639-2ed4-461c-9443-2e63dc3c01f6}</Project>
+      <Name>TeduShop.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

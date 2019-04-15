@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace TeduShop.Data.Infrastucture
 {
-    interface IDbFactory
+    public interface IDbFactory:IDisposable
     {
+        TeduShopDbContext Init();
     }
 }
