@@ -55,7 +55,18 @@
     <Compile Include="Infrastucture\IUnitOfWork.cs" />
     <Compile Include="Infrastucture\ReponsitoryBase.cs" />
     <Compile Include="Infrastucture\UnitOfWork.cs" />
+    <Compile Include="Migrations\201904151005446_InitialDB.cs" />
+    <Compile Include="Migrations\201904151005446_InitialDB.Designer.cs">
+      <DependentUpon>201904151005446_InitialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904151021242_InitialDB1.cs" />
+    <Compile Include="Migrations\201904151021242_InitialDB1.Designer.cs">
+      <DependentUpon>201904151021242_InitialDB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Respositories\ProductCategoryRepository.cs" />
+    <Compile Include="Respositories\ProductRepository.cs" />
     <Compile Include="TeduShopDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,7 +84,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Respositories\" />
+    <EmbeddedResource Include="Migrations\201904151005446_InitialDB.resx">
+      <DependentUpon>201904151005446_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904151021242_InitialDB1.resx">
+      <DependentUpon>201904151021242_InitialDB1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
