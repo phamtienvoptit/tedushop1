@@ -20,23 +20,17 @@ namespace TeduShop.Web.Api
         {
             this._postCategoryService = postCategoryService;
         }
+
         [Route("getall")]
         public HttpResponseMessage Get(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>
             {
-                HttpResponseMessage response = null;
-                if (ModelState.IsValid)
-                {
-                    request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
-                }
-                else
-                {
-                    var listCategory = _postCategoryService.GetAll();
+                var listCategory = _postCategoryService.GetAll();
 
-                    response = request.CreateResponse(HttpStatusCode.OK, listCategory);
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listCategory);
 
-                }
+
                 return response;
             });
         }
@@ -54,6 +48,7 @@ namespace TeduShop.Web.Api
                 {
                     var category = _postCategoryService.Add(postCategory);
                     _postCategoryService.Save();
+
                     response = request.CreateResponse(HttpStatusCode.Created, category);
 
                 }
