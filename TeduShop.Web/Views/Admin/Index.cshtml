@@ -5,15 +5,30 @@
 
 <!DOCTYPE html>
 
-<html ng-app>
+<html ng-app="myModule">
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>*@
+    <script src="~/Scripts/plugins/angular/angular.js"></script>
+    <script src="~/Scripts/spa/app.js"></script>
 </head>
 <body>
-    <div> 
-        10+20={{10+20}}
+    <div ng-controller="schoolController">
+        <div ng-controller="myController">
+            @*10+20={{10+20}}*@
+            @*<p>Sử dụng scope của myController</p>*@
+            In my: <p>{{message}}</p>
+        </div>
+        <div ng-controller="studentController">
+            @*<p>Sử dụng scope trong studentController</p>*@
+            In student: {{message}}
+        </div>
+        <div>
+            <p>Sử dụng rootscope: sẽ chia sẻ toàn bộ các controller </p>
+            {{message}}
+        </div>
+        In school: {{message}}
     </div>
 </body>
 </html>
