@@ -13,9 +13,5 @@ namespace TeduShop.Web.Controllers
         {
             return View();
         }
-        public ActionResult Math()
-        {
-            return View();
-        }
     }
 }
