@@ -1,19 +1,40 @@
-﻿//Khai báo module
-var myApp = angular.module('myModule', []);
+﻿/// <reference path="../plugins/angular/angular.js" />
 
-myApp.controller("myController", myController);
-myApp.controller("studentController", studentController);
+//Khai báo module
+var myApp = angular.module('myModule', []);
 myApp.controller("schoolController", schoolController);
+myApp.service("Validator", Validator);
+myApp.directive("teduShopDirective", teduShopDirective);
 //myController.$inject = ['$scope'];
 //Khai báo controller
-function myController($scope) {
-    $scope.message = "This is my message from controller";
+
+schoolController.$inject = ['$scope','Validator']
+function schoolController($scope, Validator) {
+
+    $scope.checkNumber = function () {
+        $scope.message = Validator.checkNumber($scope.num);
+    }
+    $scope.num=1;
 }
 
-function studentController($scope) {
-    $scope.message = "This is my message from student";
+function Validator($window) {
+    return {
+        checkNumber: checkNumber
+    }
+    function checkNumber(input) {
+        if (input % 2 == 0) {
+            return 'Đây là số chẵn';
+        }
+        else {
+            return 'Đây là số lẻ';
+        }
+    }
 }
 
-function schoolController($scope) {
-    $scope.message = "Annount this my school";
-}
+function teduShopDirective() {
+    return {
+        restrict:"A",
+        templateUrl: "/Scripts/spa/teduShopDirective.html"
+    }
+} 
+

@@ -15,20 +15,11 @@
 </head>
 <body>
     <div ng-controller="schoolController">
-        <div ng-controller="myController">
-            @*10+20={{10+20}}*@
-            @*<p>Sử dụng scope của myController</p>*@
-            In my: <p>{{message}}</p>
-        </div>
-        <div ng-controller="studentController">
-            @*<p>Sử dụng scope trong studentController</p>*@
-            In student: {{message}}
-        </div>
-        <div>
-            <p>Sử dụng rootscope: sẽ chia sẻ toàn bộ các controller </p>
-            {{message}}
-        </div>
-        In school: {{message}}
+        <tedu-shop-directive></tedu-shop-directive>
+        <input type="number" ng-model="num" /> Value of text: {{num}}
+        <button ng-click="checkNumber()">Check Number</button>
+        <br />
+        {{message}}
     </div>
 </body>
 </html>
